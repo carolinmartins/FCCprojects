@@ -1,0 +1,59 @@
+<html>
+  <head>
+   
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="title">New form of mine:</h1>
+      <p id="description">This form is an exercise for the Form page from FreeCodeCamp!</p>
+      <div id="form">
+      <form id="survey-form">
+        <div class="label">
+        <label for="name" id="name-label">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Insert your name" required>        </div>
+        <div class="label">
+          <label for="email" id="email-label">E-mail:</label>
+          <input type="email" name="email" id="email" placeholder="Insert your e-mail" required>
+        </div>
+          <div class="label">
+            <label for="number" id="number-label">Phone number:</label>
+            <input type="number" name="number" id="number" min="0" max="21" placeholder="Insert your phone number">
+          </div>
+        <div class="label">
+          <label for="level" id="level">Professional Level Experience:</label>
+          <select name="level" id="dropdown">
+            <option value="">Select an option</option>
+            <option value="entry">Entry level (less than 2 years)</option>
+            <option value="prof">Professional level (2 to 8 years)</option>
+            <option value="mid">Midlevel (8 to 15 years)</option>
+            <option value="senior">Senior level (15+ years)</option>
+          </select>
+        </div>
+        <div class="label">
+          <label for="radio" id="radio">Please select your educational level:</label>
+          <div id="right">
+          <input type="radio" name="rbutton" value="school">High School<br>
+          <input type="radio" name="rbutton" value="graduate">Graduate<br>
+          <input type="radio" name="rbutton" value="postgraduate">Postgraduate<br>
+          </div>
+        </div>
+        <div class="label">
+          <label for="check" id="check">Please select some jobs in IT that you already worked:
+            <div id=right>
+            <input type="checkbox" name="job" value="support">IT support<br>
+            <input type="checkbox" name="job" value="test">Quality Assurance<br>
+            <input type="checkbox" name="job" value="dev">Developer<br>
+            <input type="checkbox" name="job" value="freelancer">IT freelancer<br>
+        </div>
+            </div>
+          <div class="label">
+            <textarea rows="5" cols="50" placeholder="Additional comments."></textarea>
+          </div>
+          <div class="label">
+            <button type="submit" id="submit">Submit</button>
+          </div>
+      </form>
+        </div>
+    </div>
+  </body>
+</html>
