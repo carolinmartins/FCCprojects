@@ -1,6 +1,29 @@
 <html>
   <head>
-   
+    <script>
+          #number{
+
+          }
+
+          html{
+            background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+            min-height: 100%;
+            background-size: cover;
+          }
+
+          .label {
+            margin: 10px;
+          }
+
+          #right {
+            display: inline-block;
+            vertical-align: top;
+          }
+
+          body{
+            margin:20px;
+          }
+      </script>
   </head>
   <body>
     <div id="main">
