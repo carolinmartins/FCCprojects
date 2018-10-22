@@ -1,0 +1,132 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<html>
+  <nav id="navbar">
+    <header id="first">Python Documentation</header>
+    <ul>
+    <li class="bul"><a href="#The_Python_Tutorial" class="nav-link" id="none">The Python Tutorial</a></li>
+    <li class="bul"><a href="#Using_the_Python_Interpreter" class="nav-link" id="none">Using the Python Interpreter</a></li>
+    <li class="bul"><a href="#The_Interpreter_and_Its_Environment" class="nav-link" id="none">The Interpreter and Its Environment</a></li>
+    <li class="bul"><a href="#An_Informal_Introduction_to_Python" class="nav-link" id="none">An Informal Introduction to Python</a></li>
+    <li class="bul"><a href="#First_Steps_Towards_Programming" class="nav-link" id="none">First Steps Towards Programming</a></li>
+    <li class="bul"><a href="#More_Info" class="nav-link" id="none">More Info</a></li>
+    </ul></nav>
+  
+  <main id="main-doc">
+    <section class="main-section" id="The_Python_Tutorial">
+      <header>The Python Tutorial</header>
+      <p>Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>
+
+<p>The Python interpreter and the extensive standard library are freely available in source or binary form for all major platforms from the Python Web site, <code >https://www.python.org/</code>, and may be freely distributed. The same site also contains distributions of and pointers to many free third party Python modules, programs and tools, and additional documentation.</p>
+
+<p>The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.</p>
+
+<p>This tutorial introduces the reader informally to the basic concepts and features of the Python language and system. It helps to have a Python interpreter handy for hands-on experience, but all examples are self-contained, so the tutorial can be read off-line as well.</p>
+
+<p>For a description of standard objects and modules, see The Python Standard Library. The Python Language Reference gives a more formal definition of the language. To write extensions in C or C++, read Extending and Embedding the Python Interpreter and Python/C API Reference Manual. There are also several books covering Python in depth.</p>
+
+<p>This tutorial does not attempt to be comprehensive and cover every single feature, or even every commonly used feature. Instead, it introduces many of Python’s most noteworthy features, and will give you a good idea of the language’s flavor and style. After reading it, you will be able to read and write Python modules and programs, and you will be ready to learn more about the various Python library modules described in The Python Standard Library.</p>
+    </section>
+    <section class="main-section" id="Using_the_Python_Interpreter">
+      <header>Using the Python Interpreter</header>
+       <p>The Python interpreter is usually installed as <code id="different"> /usr/local/bin/python3.7</code> on those machines where it is available; putting <code id="different">/usr/local/bin</code> in your Unix shell’s search path makes it possible to start it by typing the command:</p>
+
+      <code id="different">python3.7</code> <p> </p>
+<p>to the shell. [1] Since the choice of the directory where the interpreter lives is an installation option, other places are possible; check with your local Python guru or system administrator. (E.g., <code id="different">/usr/local/python</code> is a popular alternative location.)</p>
+
+<p>On Windows machines, the Python installation is usually placed in <code id="different">C:\Python37</code>, though you can change this when you’re running the installer. To add this directory to your path, you can type the following command into the command prompt in a DOS box:</p>
+
+<code id="different">set path=%path%;C:\python37</code>
+      <p>Typing an end-of-file character (<code id="different">Control-D</code> on Unix, <code id="different">Control-Z</code> on Windows) at the primary prompt causes the interpreter to exit with a zero exit status. If that doesn’t work, you can exit the interpreter by typing the following command: <code id="different">quit()</code>.</p>
+
+<p>The interpreter’s line-editing features include interactive editing, history substitution and code completion on systems that support readline. Perhaps the quickest check to see whether command line editing is supported is typing <code id="different">Control-P</code> to the first Python prompt you get. If it beeps, you have command line editing; see Appendix Interactive Input Editing and History Substitution for an introduction to the keys. If nothing appears to happen, or if ^P is echoed, command line editing isn’t available; you’ll only be able to use backspace to remove characters from the current line.</p>
+
+<p>The interpreter operates somewhat like the Unix shell: when called with standard input connected to a tty device, it reads and executes commands interactively; when called with a file name argument or with a file as standard input, it reads and executes a script from that file.</p>
+
+<p>A second way of starting the interpreter is <code id="different">python -c command [arg] ...</code>, which executes the statement(s) in command, analogous to the shell’s <code id="different">-c</code> option. Since Python statements often contain spaces or other characters that are special to the shell, it is usually advised to quote command in its entirety with single quotes.</p>
+
+<p>Some Python modules are also useful as scripts. These can be invoked using<code id="different"> python -m module [arg] ...</code>, which executes the source file for module as if you had spelled out its full name on the command line.</p>
+
+<p>When a script file is used, it is sometimes useful to be able to run the script and enter interactive mode afterwards. This can be done by passing <code id="different">-i</code> before the script.</p>
+
+      <p>All command line options are described in <a href="https://docs.python.org/3/using/cmdline.html#using-on-general" target="_blank">Command line and environment</a>. </p>    
+    </section>
+    <section class="main-section" id="The_Interpreter_and_Its_Environment">
+      <header>The Interpreter and Its Environment</header>
+      <p>By default, Python source files are treated as encoded in UTF-8. In that encoding, characters of most languages in the world can be used simultaneously in string literals, identifiers and comments — although the standard library only uses ASCII characters for identifiers, a convention that any portable code should follow. To display all these characters properly, your editor must recognize that the file is UTF-8, and it must use a font that supports all the characters in the file.</p>
+
+<p>To declare an encoding other than the default one, a special comment line should be added as the first line of the file. The syntax is as follows:</p>
+
+      <code id="different"># -*- coding: encoding -*-</code>
+      <p>where encoding is one of the valid codecs supported by Python.</p>
+
+<p>For example, to declare that Windows-1252 encoding is to be used, the first line of your source code file should be:</p>
+
+      <code id="different"># -*- coding: cp1252 -*-</code>
+<p>One exception to the first line rule is when the source code starts with a UNIX “shebang” line. In this case, the encoding declaration should be added as the second line of the file. For example:</p>
+
+<code id="different">#!/usr/bin/env python3</code>
+<code id="different"># -*- coding: cp1252 -*</code><br><br>
+    </section>
+    <section class="main-section" id="An_Informal_Introduction_to_Python">
+      <header>An Informal Introduction to Python</header>
+      <p>In the following examples, input and output are distinguished by the presence or absence of prompts (<code id="different">>>></code and <code id="different">…</code>): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
+
+<p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
+
+      <p>Some examples:</p>
+
+      <code id="different"># this is the first comment</code><br>
+      <code id="different">spam = 1  # and this is the second comment</code><br>
+          <code id="different">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ... and now a third!</code><br>
+      <code id="different">text = "# This is not a comment because it's inside quotes."</code>
+      <p>You can also:</p>
+      <li>Use Python as a <a href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator">calculator</a>.</li>
+      <li id="secondlist"><a href="https://docs.python.org/3/tutorial/introduction.html#numbers">Numbers</a></li>
+      <li id="secondlist"><a href="https://docs.python.org/3/tutorial/introduction.html#strings">Strings</a></li>
+      <li id="secondlist"><a href="https://docs.python.org/3/tutorial/introduction.html#lists">Lists</a></li><br>
+    </section>
+    <section class="main-section" id="First_Steps_Towards_Programming">
+      <header>First Steps Towards Programming</header>
+      <p>Of course, we can use Python for more complicated tasks than adding two and two together. For instance, we can write an initial sub-sequence of the Fibonacci series as follows:</p>
+      <div><code id="box">
+        >>> # Fibonacci series:<br>
+... # the sum of two elements defines the next<br>
+... a, b = 0, 1<br>
+>>> while a < 10:<br>
+...     print(a)<br>
+...     a, b = b, a+b<br>
+        ...<br>
+0<br>
+1<br>
+1<br>
+2<br>
+3<br>
+5<br>
+8</code></div>
+      <p>This example introduces several new features.</p>
+
+      <li>The first line contains a multiple assignment: the variables <code id="different">a</code> and <code id="different">b</code> simultaneously get the new values 0 and 1. On the last line this is used again, demonstrating that the expressions on the right-hand side are all evaluated first before any of the assignments take place. The right-hand side expressions are evaluated from the left to the right.</li><br>
+
+      <li>The <code id="different">while</code> loop executes as long as the condition (here: <code id="different">a < 10</code>) remains true. In Python, like in C, any non-zero integer value is true; zero is false. The condition may also be a string or list value, in fact any sequence; anything with a non-zero length is true, empty sequences are false. The test used in the example is a simple comparison. The standard comparison operators are written the same as in C: <code id="different"><</code> (less than), <code id="different">></code> (greater than), <code id="different">==</code> (equal to), <code id="different"><=</code> (less than or equal to), <code id="different">>=</code (greater than or equal to) and <code id="different">!=</code> (not equal to).</li><br>
+
+<li>The body of the loop is indented: indentation is Python’s way of grouping statements. At the interactive prompt, you have to type a tab or space(s) for each indented line. In practice you will prepare more complicated input for Python with a text editor; all decent text editors have an auto-indent facility. When a compound statement is entered interactively, it must be followed by a blank line to indicate completion (since the parser cannot guess when you have typed the last line). Note that each line within a basic block must be indented by the same amount.</li><br>
+
+        <li><code id="different">The print()</code> function writes the value of the argument(s) it is given. It differs from just writing the expression you want to write (as we did earlier in the calculator examples) in the way it handles multiple arguments, floating point quantities, and strings. Strings are printed without quotes, and a space is inserted between items, so you can format things nicely, like this:</li><br>
+      <code id="box">>>> i = 256*256<br>
+>>> print('The value of i is', i)<br>
+The value of i is 65536</code>
+      <p>The keyword argument end can be used to avoid the newline after the output, or end the output with a different string:<p>
+      <code id="box">>>> a, b = 0, 1<br>
+>>> while a < 1000:<br>
+...     print(a, end=',')<br>
+...     a, b = b, a+b<br>
+...<br>
+        0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,</code><br>
+    </section>
+        <section class="main-section" id="More_Info">
+          <header>More Info</header>
+          <p>To know more about this tutorial, please visit the <a href="https://docs.python.org/3/tutorial/index.html">website</a>.</p>
+        </section>
+  </main>
+</html>
